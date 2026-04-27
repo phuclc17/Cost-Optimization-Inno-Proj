@@ -63,3 +63,24 @@ CREATE INDEX IF NOT EXISTS idx_decisions_strategy
 ON scaling_decisions(strategy, decided_at);
 CREATE INDEX IF NOT EXISTS idx_benchmark_strategy
 ON benchmark_results(strategy, traffic_pattern);
+CREATE TABLE IF NOT EXISTS analytical_results (
+ id              BIGSERIAL PRIMARY KEY,
+lambda_rps      FLOAT NOT NULL,
+mu_per_worker   FLOAT NOT NULL,
+sla_threshold_ms FLOAT NOT NULL,
+w_optimal       INTEGER,
+latency_theory_ms FLOAT,
+cost_per_hour   FLOAT,
+savings_vs_static_pct FLOAT,
+scale_label     VARCHAR(20),
+created_at      TIMESTAMPTZ DEFAULT NOW()
+);
+CREATE TABLE IF NOT EXISTS model_validation (
+id                  BIGSERIAL PRIMARY KEY,
+workers             INTEGER NOT NULL,
+lambda_rps          FLOAT NOT NULL,
+latency_theory_ms   FLOAT,
+latency_measured_ms FLOAT,
+error_pct           FLOAT,
+mu_used             FLOAT,
+validated_at        TIMESTAMPTZ DEFAULT NOW());
