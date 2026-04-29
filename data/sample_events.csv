@@ -1,0 +1,11 @@
+event_id,channel,event_type,user_id,product_id,category,amount,region,device
+evt-001,web,purchase,user_001,prod_101,electronics,1500000,HCM,mobile
+evt-002,pos,transaction,user_002,prod_205,fashion,450000,HN,pos_terminal
+evt-003,marketplace,order_placed,user_003,prod_310,beauty,280000,DN,mobile
+evt-004,web,add_to_cart,user_004,prod_102,electronics,2000000,HCM,desktop
+evt-005,pos,transaction,user_005,prod_206,fashion,320000,CT,pos_terminal
+evt-006,marketplace,order_placed,user_006,prod_311,beauty,150000,HCM,mobile
+evt-007,web,purchase,user_007,prod_103,home_living,890000,HN,tablet
+evt-008,pos,return,user_008,prod_207,fashion,450000,HN,pos_terminal
+evt-009,marketplace,order_delivered,user_009,prod_312,beauty,280000,DN,mobile
+evt-010,web,purchase,user_010,prod_104,electronics,3200000,HCM,desktop
